@@ -5,5 +5,9 @@ import (
 )
 
 func main() {
-	fmt.Println("Arrays")
+	var colors [3]string
+	colors[0] = "Red"
+	colors[0] = "Green"
+	colors[0] = "Blue"
+	fmt.Println(colors)
 }
