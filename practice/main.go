@@ -17,4 +17,13 @@ func main() {
 		result = "> 0"
 	}
 	fmt.Println(result)
+
+	if theAnswer := -42; theAnswer < 0 {
+		result = "Less 0"
+	} else if theAnswer == 0 {
+		result = "0"
+	} else {
+		result = "> 0"
+	}
+	fmt.Println(result)
 }
