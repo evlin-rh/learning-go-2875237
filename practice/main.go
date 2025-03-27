@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 )
 
@@ -17,13 +17,15 @@ func main() {
 
 	fmt.Printf("Response type: %T\n", resp)
 
+	// HTTP has a response field called body so we have to close it
 	defer resp.Body.Close()
 
-	bytes, err := ioutil.ReadAll(resp.Body)
+	bytes, err := io.ReadAll(resp.Body)
 	if err != nil {
 		panic(err)
 	}
 
 	content := string(bytes)
 	fmt.Print(content)
+
 }
